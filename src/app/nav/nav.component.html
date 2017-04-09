@@ -1,0 +1,30 @@
+<div class="container">
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" [routerLink]="['home']">Home</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a  class="navbar-brand"      
+       *ngIf = "auth.loggedIn()"  [routerLink]="['profile']" >Profile</a>
+    </li>
+    
+  </ul>
+  
+  <ul class="nav navbar-nav pull-right">
+  <li class="nav-item">
+      <a class="nav-link"  *ngIf = "auth.loggedIn()" (click)="auth.logout()">Log out</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" *ngIf = "!auth.loggedIn()" (click)="auth.login()"> Sign in </a>
+    </li>    
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/al6obasi/openSooqTask">
+      </a>
+    </li>
+  </ul>
+</nav>
+  
+</div>
+
+
+
+
